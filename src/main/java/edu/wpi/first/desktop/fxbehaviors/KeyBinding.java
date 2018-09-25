@@ -45,7 +45,7 @@ public final class KeyBinding<B extends BehaviorBase<?, B>> extends Binding<KeyE
       throw new IllegalArgumentException("KEY_TYPED events do not trigger key combinations");
     }
 
-    this.keyCombinations = List.copyOf(keyCombinations);
+    this.keyCombinations = new ArrayList<>(keyCombinations);
   }
 
   @Override
