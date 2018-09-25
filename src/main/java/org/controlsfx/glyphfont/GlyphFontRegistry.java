@@ -64,11 +64,9 @@ public final class GlyphFontRegistry {
     static {
         // find all classes that implement GlyphFont and register them now
         ServiceLoader<GlyphFont> loader = ServiceLoader.load(GlyphFont.class);
-        System.out.println("Loading GlyphFonts");
         for (GlyphFont font : loader) {
             GlyphFontRegistry.register(font);
         }
-        register(new FontAwesome());
     }
 
     /**
@@ -109,7 +107,6 @@ public final class GlyphFontRegistry {
      * @param font
      */
     public static void register( GlyphFont font ) {
-        System.out.println("  Registering " + font);
         if (font != null ) {
             fontMap.put( font.getName(), font );
         }
