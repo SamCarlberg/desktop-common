@@ -95,7 +95,9 @@ dependencies {
 
     // Still uses JavaFX internals and forces dependent apps to use --add-exports flags
     // The controlsfx maintainers don't seem interested in fixing this for a while
-    //api(group = "org.controlsfx", name = "controlsfx", version = "9.0.0")
+    // Used as compileOnly so downstreams don't _have_ to use it
+    compileOnly(group = "org.controlsfx", name = "controlsfx", version = "9.0.0")
+    testCompile(group = "org.controlsfx", name = "controlsfx", version = "9.0.0")
 
     fun junitJupiter(name: String, version: String = "5.3.0") =
             create(group = "org.junit.jupiter", name = name, version = version)
